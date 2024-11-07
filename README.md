@@ -2,5 +2,5 @@
 
 Miembros:
 
-Carlos MÃndez - Legajo NÂ117852
+Carlos MÃ©ndez - Legajo NÂº117852
 
