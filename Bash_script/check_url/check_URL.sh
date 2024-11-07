@@ -30,24 +30,45 @@ fi
 ANT_IFS=$IFS
 IFS=$'\n'
 
-#---- Dentro del bucle ----#
-for URL in $(cat "$LISTA"); do
-  # Obtener el código de estado HTTP
-  STATUS_CODE=$(curl -LI -o /dev/null -w '%{http_code}\n' -s "$URL")
+#Genero Estructura de directorios
+mkdir -p /tmp/head-check/{Error/{cliente,servidor},ok}
 
-  # Fecha y hora actual en formato yyyymmdd_hhmmss
-  TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+#---- Dentro idel bucle ----#
+for LINEA in `cat $LISTA |  grep -v ^#`; do
 
-  #Creo el path del archivo log y nombre de arhivo
-  DIR=""
-  NOMBRE_ARCHIVO=""
+	#Extraigo URL y Dominio
+	URL=$(echo $LINEA | awk '{print $2}')
+  	DOM=$(echo $LINEA | awk '{print $1}')
 
- # Registrar en el archivo /var/log/status_url.log
-  echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" |sudo tee -a  "$LOG_FILE"
+  	# Obtener el código de estado HTTP
+  	STATUS_CODE=$(curl -LI -o /dev/null -w '%{http_code}\n' -s "$URL")
 
-  echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" > "$DIR/$NOMBRE_ARCHIVO.log"
+  	# Fecha y hora actual en formato yyyymmdd_hhmmss
+  	TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
+  	#Creo el path del archivo log y nombre de arhivo
+  	FILEPATH="/tmp/head-check"
+	DIR=""
+
+ 	if [ "$STATUS_CODE" -gt 499 ]; then
+	  	DIR="$FILEPATH/Error/servidor"
+  	elif [ "$STATUS_CODE" -gt 399 ]; then
+		DIR="$FILEPATH/Error/cliente"
+  	else
+	  	DIR="$FILEPATH/ok"
+  	fi
+
+ 	# Registrar en el archivo /var/log/status_url.log
+  	echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" |sudo tee -a  "$LOG_FILE"
+
+  	echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" > "$DIR/$DOM.log"
 
 done
 #-------------------------#
 
 IFS=$ANT_IFS
+
+#Muestro el resultado
+echo "######## Logs resultantes ########"
+tree /tmp/head-check
+cat $LOG_FILE
