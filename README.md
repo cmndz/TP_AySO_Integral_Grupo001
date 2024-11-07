@@ -1,6 +1,7 @@
 # TP_AySO_Integral_Grupo001
 
-Integrantes:
+### Integrantes:
+ - Pablo Ali - Legajo: 112468
+ - Juan Gabriel Sancineto - Legajo: 108164
+ - Carlos Méndez - Legajo: 117852
 
-Juan Gabriel Sancineto - Legajo: 108164
-Carlos Méndez - Legajo Nº117852
