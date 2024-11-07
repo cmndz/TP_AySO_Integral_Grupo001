@@ -1,2 +1,7 @@
 # TP_AySO_Integral_Grupo001
-Nombre y Apellido: Pablo Ali - Legajo: 112468
+
+### Integrantes:
+ - Pablo Ali - Legajo: 112468
+ - Juan Gabriel Sancineto - Legajo: 108164
+ - Carlos Méndez - Legajo: 117852
+
