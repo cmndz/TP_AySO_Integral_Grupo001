@@ -1,2 +1,7 @@
 # TP_AySO_Integral_Grupo001
-Sergio Maximiliano Martinez Rivero - Legajo 117842
+
+### Integrantes:
+ - Sergio Maximiliano Martinez Rivero - Legajo: 117842
+ - Pablo Ali - Legajo: 112468
+ - Juan Gabriel Sancineto - Legajo: 108164
+ - Carlos Méndez - Legajo: 117852
