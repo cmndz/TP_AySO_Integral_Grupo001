@@ -18,6 +18,11 @@ if [ ! -f "$KEY_PATH" ]; then
 	ssh-keygen -t ed25519 -f "$KEY_PATH" -q -N ""
 fi
 
+# iniciar agente ssh y agregar la clave
+
+eval $(ssh-agent -s)
+ssh-add "$KEY_PATH"
+
 # Copiar la clave pública a la máquina remota
 sshpass -p "$PASS" ssh-copy-id -i "$KEY_PATH.pub" "$REMOTE_USER@$REMOTE_HOST"
 
