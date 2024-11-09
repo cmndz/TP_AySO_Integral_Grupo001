@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "testing" do |vm1Grupo001|
     vm1Grupo001.vm.box = "ubuntu/jammy64"
-    vm1Grupo001.vm.hostname = "vm1Grupo001"
+    vm1Grupo001.vm.hostname = "VM1-Grupo-001"
     vm1Grupo001.vm.network "private_network", :name => '', ip: "192.168.56.4"
 
     # Comparto la carpeta del host donde estoy parado contra la vm
@@ -32,7 +32,8 @@ Vagrant.configure("2") do |config|
 
     # Ejecuto scripts
     vm1Grupo001.vm.provision "shell", path: "script_Enable_ssh_password.sh"
-    vm1Grupo001.vm.provision "shell", path: "instala_paquetes.sh"
+    vm1Grupo001.vm.provision "shell", path: "instala_paquetes_VM1.sh"
+    vm1Grupo001.vm.provision "shell", path: "resolucion_nombre.sh"
     vm1Grupo001.vm.provision "shell", privileged: false, inline: <<-SHELL
       
       # Los comandos aca se ejecutan como vagrant
@@ -45,18 +46,13 @@ Vagrant.configure("2") do |config|
       git clone https://github.com/cmndz/TP_AySO_Integral_Grupo001.git
 
     SHELL
-
-    # Añadir entradas al archivo /etc/hosts
-    vm1Grupo001.vm.provision "shell", inline: <<-SHELL
-      echo "192.168.56.4 vm1Grupo001" | sudo tee -a /etc/hosts
-    SHELL
     
   end
     
     
   config.vm.define "produccion" do |vm2Grupo001|
     vm2Grupo001.vm.box ="generic/fedora33" 
-    vm2Grupo001.vm.hostname = "vm2Grupo001"
+    vm2Grupo001.vm.hostname = "VM2-Grupo-001"
     vm2Grupo001.vm.network "private_network", :name => '', ip: "192.168.56.5"
 
     # Comparto la carpeta del host donde estoy parado contra la vm
@@ -82,6 +78,8 @@ Vagrant.configure("2") do |config|
 
     # Ejecuto scripts
     vm2Grupo001.vm.provision "shell", path: "script_Enable_ssh_password.sh"
+    vm2Grupo001.vm.provision "shell", path: "instala_paquetes_VM2.sh"
+    vm2Grupo001.vm.provision "shell", path: "resolucion_nombre.sh"
     vm2Grupo001.vm.provision "shell", privileged: false, inline: <<-SHELL
       
     #  Los comandos aca se ejecutan como vagrant
@@ -93,19 +91,6 @@ Vagrant.configure("2") do |config|
      git clone https://github.com/upszot/UTN-FRA_SO_Docker.git
      git clone https://github.com/cmndz/TP_AySO_Integral_Grupo001.git
 
-    SHELL
-    
-    # Provisión para instalar
-    # vm2Grupo001.vm.provision "shell", inline: <<-SHELL
-    #   dnf install -y /home/vagrant/compartido/tree-1.8.0-10.el9.x86_64.rpm
-
-    #   subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
-    #   dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-    # SHELL
-
-    # Añadir entradas al archivo /etc/hosts
-    vm2Grupo001.vm.provision "shell", inline: <<-SHELL
-      echo "192.168.56.5 vm2Grupo001" | sudo tee -a /etc/hosts
     SHELL
 
   end
