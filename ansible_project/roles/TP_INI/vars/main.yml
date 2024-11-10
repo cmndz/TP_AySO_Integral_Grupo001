@@ -1,0 +1,10 @@
+grupo: "Grupo_001"
+division: "División_313"
+usuarios:
+  R1: { nombre: "Carlos", apellido: "Mendez" }
+  R2: { nombre: "Pablo", apellido: "Ali" }
+  R3: { nombre: "Juan Gabriel", apellido: "Sancineto" }
+  R4: { nombre: "Sergio Maximiliano", apellido: "Martínez" }
+  R5: { nombre: "Juan Ignacio", apellido: "Sanchez" }
+  R5: { nombre: "Lourdes", apellido: "Privitera" }
+
