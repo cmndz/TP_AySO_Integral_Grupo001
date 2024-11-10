@@ -1,0 +1,10 @@
+Nombre Grupo: {{ grupo }}
+División: {{ division }}
+Fecha: {{ ansible_date_time.date }}
+-------------------------
+Distribución: {{ ansible_distribution }}
+Cantidad de Cores: {{ ansible_processor_cores }}
+-------------------------
+{% for rol, nombre in usuarios.items() %}
+{{ rol }}: Nombre: {{ nombre.nombre }} Apellido: {{ nombre.apellido }}
+{% endfor %}

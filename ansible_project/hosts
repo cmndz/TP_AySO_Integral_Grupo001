@@ -1,0 +1,5 @@
+[testing]
+ubuntu_testing ansible_host=192.168.56.4
+
+[production]
+fedora_production ansible_host=192.168.56.5
