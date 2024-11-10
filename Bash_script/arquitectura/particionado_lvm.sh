@@ -1,5 +1,5 @@
 #!/bin/bash
-
+clear
 echo "###########################################"
 echo "Verificaciones Previas"
 echo "###########################################"
@@ -51,9 +51,11 @@ echo "Se limpian las Particiones"
 echo
 sudo wipefs -a $DISCO01
 sudo wipefs -a $DISCO02
-sudo wipefs -a ${DISCO03}2
-sudo swapoff ${DISCO03}1
-sudo wipefs -a ${DISCO03}1
+if sudo fdisk -l | grep ${DISCO03}1 | grep swap; then
+	sudo swapoff ${DISCO03}1
+	sudo wipefs -a ${DISCO03}1
+fi
+sudo wipefs -a $DISCO03
 echo
 
 echo "###########################################"
@@ -107,7 +109,6 @@ t
 8E
 w
 EOF
-
 echo "###########################################"
 echo "Se Crean los PVs"
 echo
