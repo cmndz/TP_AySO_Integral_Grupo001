@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Ejecutar TP_INI
+      include_role:
+        name: TP_INI
+
+    - name: Crear usuarios del grupo
+      include_role:
+        name: Alta_Usuarios_Grupo
+
+    - name: Configurar sudoers
+      include_role:
+        name: Sudoers_Grupo
+
+    - name: Instalar herramientas
+      include_role:
+        name: Instala-tools_Grupo
