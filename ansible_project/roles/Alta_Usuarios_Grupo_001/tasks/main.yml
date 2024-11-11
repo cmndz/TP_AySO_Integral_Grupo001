@@ -1,4 +1,17 @@
 ---
+- name: Crear grupos necesarios
+  group:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - G_R1
+    - G_R2
+    - G_R3
+    - G_R4
+    - G_R5
+    - G_R6
+    - Grupo_001
+
 - name: Crear usuarios
   user:
     name: "{{ item.nombre }}"
