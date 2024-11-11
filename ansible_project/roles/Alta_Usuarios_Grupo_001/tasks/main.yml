@@ -1,0 +1,27 @@
+---
+- name: Crear grupos necesarios
+  group:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - G_R1
+    - G_R2
+    - G_R3
+    - G_R4
+    - G_R5
+    - G_R6
+    - Grupo_001
+
+- name: Crear usuarios
+  user:
+    name: "R{{ item.rol }}_{{ item.nombre | lower | replace(' ', '') }}"
+    groups: "G_R{{ item.rol }},Grupo_001"
+    password: "{{ 'vagrant' | password_hash('sha512') }}"
+  loop:
+    - { nombre: "{{ usuarios.R1.nombre }}", rol: 1 }
+    - { nombre: "{{ usuarios.R2.nombre }}", rol: 2 }
+    - { nombre: "{{ usuarios.R3.nombre }}", rol: 3 }
+    - { nombre: "{{ usuarios.R4.nombre }}", rol: 4 }
+    - { nombre: "{{ usuarios.R5.nombre }}", rol: 5 }
+    - { nombre: "{{ usuarios.R6.nombre }}", rol: 6 }
+
