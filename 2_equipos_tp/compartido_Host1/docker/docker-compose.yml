@@ -1,9 +1,7 @@
 version: '3'
-
 services:
-    web:
-        image: 
-        ports:
-            - 
-        volumes:
-            - 
+  web:
+    build:
+      context: .
+    ports:
+      - "8080:80"
