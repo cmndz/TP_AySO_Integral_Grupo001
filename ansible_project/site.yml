@@ -1,6 +1,8 @@
 ---
 - hosts: all
   become: true
+  vars_files:
+    - roles/TP_INI/vars/main.yml
   tasks:
     - name: Ejecutar TP_INI
       include_role:

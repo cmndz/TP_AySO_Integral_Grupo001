@@ -6,5 +6,5 @@ usuarios:
   R3: { nombre: "Juan Gabriel", apellido: "Sancineto" }
   R4: { nombre: "Sergio Maximiliano", apellido: "Martínez" }
   R5: { nombre: "Juan Ignacio", apellido: "Sanchez" }
-  R5: { nombre: "Lourdes", apellido: "Privitera" }
+  R6: { nombre: "Lourdes", apellido: "Privitera" }
 
