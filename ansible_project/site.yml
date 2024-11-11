@@ -1,6 +1,8 @@
 ---
 - hosts: all
   become: true
+  vars_files:
+    - roles/TP_INI/vars/main.yml
   tasks:
     - name: Ejecutar TP_INI
       include_role:
@@ -8,12 +10,12 @@
 
     - name: Crear usuarios del grupo
       include_role:
-        name: Alta_Usuarios_Grupo
+        name: Alta_Usuarios_Grupo_001
 
     - name: Configurar sudoers
       include_role:
-        name: Sudoers_Grupo
+        name: Sudoers_Grupo_001
 
     - name: Instalar herramientas
       include_role:
-        name: Instala-tools_Grupo
+        name: Instala-tools_Grupo_001
