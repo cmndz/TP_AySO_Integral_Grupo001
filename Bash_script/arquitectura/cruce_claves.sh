@@ -23,10 +23,9 @@ fi
 eval $(ssh-agent -s)
 ssh-add "$KEY_PATH"
 
+# Copiar la clave pública al archivo authorized_keys en la máquina local
+cat "$KEY_PATH.pub" >> ~/.ssh/authorized_keys
+
 # Copiar la clave pública a la máquina remota
 sshpass -p "$PASS" ssh-copy-id -i "$KEY_PATH.pub" "$REMOTE_USER@$REMOTE_HOST"
-
-# Copiar la clave pública al propio authorized_keys:
-cat $KEY_PATH.pub >> ~/.ssh/authorized_keys
-
 
