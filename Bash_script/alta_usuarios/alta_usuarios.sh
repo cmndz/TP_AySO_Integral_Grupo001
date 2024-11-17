@@ -16,36 +16,36 @@ clear
 LISTA=$1
 USUARIO_PARAMETRO=$2
 #Chequeo que el archivo haya sido proporcionado
-if [ -z "$LISTA" ]; then
-	echo "Lista de usuarios no proporcionada"
-	exit 1
-fi
+#if [ -z "$LISTA" ]; then
+#	echo "Lista de usuarios no proporcionada"
+#	exit 1
+#fi
 
 #Chequeo que el archivo exista
-if [ ! -f "$LISTA" ]; then
-	echo "El archivo $LISTA no existe"
-	exit 1
-fi
+#if [ ! -f "$LISTA" ]; then
+#	echo "El archivo $LISTA no existe"
+#	exit 1
+#fi
 
 #Chequeo que el user haya sido proporcionado
-if [ -z "$USUARIO_PARAMETRO" ]; then
-	echo "Usuario no proporcionado"
-	exit 1
-fi
+#if [ -z "$USUARIO_PARAMETRO" ]; then
+#	echo "Usuario no proporcionado"
+#	exit 1
+#fi
 
 #Chequeo que el user exista
-if ! grep -q "^$USUARIO_PARAMETRO:" /etc/passwd; then
-	echo "El usuario $USUARIO_PARAMETRO no existe"
-	exit 1
-fi
+#if ! grep -q "^$USUARIO_PARAMETRO:" /etc/passwd; then
+#	echo "El usuario $USUARIO_PARAMETRO no existe"
+#	exit 1
+#fi
 
-CLAVE=$(sudo cat /etc/shadow | grep $2 | awk -F ':' '{print $2}')
+CLAVE=$(sudo cat /etc/shadow | grep $USUARIO_PARAMETRO | awk -F ':' '{print $2}')
 
 #Chequeo si la clave es valida
-if [ -z "$CLAVE" ]; then
-	echo "No se pudo obtener la clave de $USUARIO_PARAMETRO"
-	exit 1
-fi
+#if [ -z "$CLAVE" ]; then
+#	echo "No se pudo obtener la clave de $USUARIO_PARAMETRO"
+#	exit 1
+#fi
 
 
 ANT_IFS=$IFS
@@ -63,7 +63,7 @@ do
 	fi
 
 	#Creo el usuario
-	sudo useradd -d $HOME_USUARIO -s /bin/bash -p $CLAVE -g $GRUPO $USUARIO
+	sudo useradd -m -d $HOME_USUARIO -s /bin/bash -p $CLAVE -g $GRUPO $USUARIO
 done
 IFS=$ANT_IFS
 

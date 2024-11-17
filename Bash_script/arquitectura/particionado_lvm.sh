@@ -152,6 +152,11 @@ sudo swapon /dev/mapper/vg_temp-lv_swap
 echo
 
 echo "###########################################"
+echo "Se extiende y redimensiona lv_docker"
+sudo lvextend -L 2G /dev/mapper/vg_datos-lv_docker
+sudo resize2fs /dev/mapper/vg_datos-lv_docker
+
+echo "###########################################"
 echo "Fin del Script"
 echo "###########################################"
 echo

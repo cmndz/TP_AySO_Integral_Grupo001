@@ -16,16 +16,16 @@ LISTA=$1
 LOG_FILE="/var/log/status_url.log"
 
 #Chequeo que el parametro haya sido proporcionado
-if [ -z "$LISTA" ]; then
-	echo "Archivo de parametro no proporcionado"
-	exit 1
-fi
+#if [ -z "$LISTA" ]; then
+#	echo "Archivo de parametro no proporcionado"
+#	exit 1
+#fi
 
 #Chequeo que el archivo existe
-if [ ! -f "$LISTA" ]; then
-	echo "El archivo parametro no existe"
-	exit 1
-fi
+#if [ ! -f "$LISTA" ]; then
+#	echo "El archivo parametro no existe"
+#	exit 1
+#fi
 
 ANT_IFS=$IFS
 IFS=$'\n'
