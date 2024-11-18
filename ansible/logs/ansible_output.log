@@ -1,0 +1,22 @@
+2024-11-18 21:55:39,264 p=2204 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-18 21:55:39,319 p=2204 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-18 21:55:42,720 p=2204 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-18 21:55:42,838 p=2204 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-18 21:55:42,852 p=2204 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-18 21:55:43,109 p=2204 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Nombre-Grupo-Ejemplo] **********************************************
+2024-11-18 21:55:43,150 p=2204 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-18 21:55:43,155 p=2204 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-18 21:55:43,164 p=2204 u=vagrant n=ansible | TASK [Otra tarea] **************************************************************************************
+2024-11-18 21:55:43,198 p=2204 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-11-18 21:55:43,202 p=2204 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-11-18 21:55:43,217 p=2204 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-18 21:55:43,217 p=2204 u=vagrant n=ansible | VM1-Grupo-001              : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-18 21:55:43,217 p=2204 u=vagrant n=ansible | VM2-Grupo-001              : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
