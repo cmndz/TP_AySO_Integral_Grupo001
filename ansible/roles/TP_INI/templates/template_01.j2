@@ -4,11 +4,11 @@
 #Variable= {{ Variable_Vars_main |upper }}
 
 Nombre Grupo: {{ Nombre_Grupo }}
-División: 
-Fecha: 
+División: {{ Division }} 
+Fecha: {{ansible_date_time.date}}
 —-------------------------
-Distribución: 
-Cantidad de Cores: 
+Distribución: {{ ansible_distribution }}
+Cantidad de Cores: {{ ansible_processor_cores }}
 —-------------------------
 R1: Nombre:     Apellido: 
 R2: Nombre:     Apellido: 
