@@ -39,14 +39,19 @@ USUARIO_PARAMETRO=$2
 #	exit 1
 #fi
 
-CLAVE=$(sudo cat /etc/shadow | grep $USUARIO_PARAMETRO | awk -F ':' '{print $2}')
+CLAVE=$(sudo grep $USUARIO_PARAMETRO /etc/shadow | awk -F ':' '{print $2}')
 
 #Chequeo si la clave es valida
-#if [ -z "$CLAVE" ]; then
-#	echo "No se pudo obtener la clave de $USUARIO_PARAMETRO"
-#	exit 1
-#fi
+if [ -z "$CLAVE" ]; then
+	echo "No se pudo obtener la clave de $USUARIO_PARAMETRO"
+	exit 1
+fi
 
+# Verificar si la clave comienza con '!' (usuario bloqueado)
+if [[ "$CLAVE" == !* ]]; then
+	echo "El usuario $USUARIO_PARAMETRO está bloqueado"
+	exit 2
+fi
 
 ANT_IFS=$IFS
 

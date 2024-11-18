@@ -61,7 +61,7 @@ for LINEA in `cat $LISTA |  grep -v ^#`; do
  	# Registrar en el archivo /var/log/status_url.log
   	echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" |sudo tee -a  "$LOG_FILE"
 
-  	echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" > "$DIR/$DOM.log"
+  	echo "$TIMESTAMP - Code:$STATUS_CODE - URL:$URL" >> "$DIR/$DOM.log"
 
 done
 #-------------------------#
