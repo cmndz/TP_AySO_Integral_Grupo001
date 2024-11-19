@@ -5,4 +5,15 @@
    debug:
      msg: "Inicio de tareas dentro del Rol: TP_INI"
 
+ - name: "Crear directorio /tmp/Grupo/"
+   file:
+     path: /tmp/Grupo/
+     state: directory
+     owner: vagrant
+     mode: '0700'
 
+ - name: "Crear archivo datos.txt, a partir de Template"
+   template:
+     src: template_01.j2
+     dest: /tmp/Grupo/datos.txt
+     mode: '0700'
