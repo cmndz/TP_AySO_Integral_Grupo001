@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     build: .
-    image: $mustuan/tp-div_313_grupo_grupo001
+    image: $cmndz/tp-div_313_grupo_grupo001
     volumes:
       - ./web/file:/usr/share/nginx/html/file
     ports:
