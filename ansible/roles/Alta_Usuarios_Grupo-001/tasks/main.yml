@@ -19,7 +19,7 @@
   group:
     name: "G_{{ item }}"
     state: present
-  loop: "{{ Usuarios.keys() }}"
+  loop: "{{ Usuarios.keys() | list }}" #se convierte el diccionario a lista para que no rompa en fedora
 
 # crear grupo secundario
 - name: Crear el grupo secundario
@@ -38,4 +38,4 @@
     shell: /bin/bash
     password: "{{ HASH.stdout }}"
     state: present
-  loop: "{{ Usuarios.keys() }}"
+  loop: "{{ Usuarios.keys() | list }}" #convertir a lista
