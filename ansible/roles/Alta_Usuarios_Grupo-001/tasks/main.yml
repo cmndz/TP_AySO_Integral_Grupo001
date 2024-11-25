@@ -1,0 +1,41 @@
+---
+
+# mensaje inicial
+- name: "Rol: Alta_Usuarios_{{ Nombre_Grupo }} - Grupo: {{ Nombre_Grupo }}"
+  debug:
+    msg: "Inicio de tareas dentro del Rol: Alta_Usuarios_{{ Nombre_Grupo }} "
+
+
+# capturar hash de vagrant
+- name: Obtener la clave de vagrant
+  become: yes
+  shell: "grep vagrant /etc/shadow | awk -F ':' '{print $2}'"
+  register: HASH
+  changed_when: false
+
+# crear grupos principales
+- name: Crear grupos principales
+  become: yes
+  group:
+    name: "G_{{ item }}"
+    state: present
+  loop: "{{ Usuarios.keys() }}"
+
+# crear grupo secundario
+- name: Crear el grupo secundario
+  become: yes
+  group:
+    name: "{{ Nombre_Grupo }}"
+    state: present
+
+# crear usuarios
+- name: Crear usuarios
+  become: yes
+  user:
+    name: "{{ item }}_{{ Usuarios[item].nombre | replace(' ', '') }}"
+    group: "G_{{ item }}"
+    groups: "{{ Nombre_Grupo }}"
+    shell: /bin/bash
+    password: "{{ HASH.stdout }}"
+    state: present
+  loop: "{{ Usuarios.keys() }}"

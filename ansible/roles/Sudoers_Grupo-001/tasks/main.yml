@@ -1,0 +1,16 @@
+---
+
+# mensaje inicial
+- name: "Rol: Sudoers_{{ Nombre_Grupo }} - Grupo: {{ Nombre_Grupo }}"
+  debug:
+    msg: "Inicio de tareas dentro del Rol: Sudoers_{{ Nombre_Grupo }}"
+
+
+# modificamos /etc/sudoers de manera segura
+- name: "Agregar al grupo {{ Nombre_Grupo }} para sudo sin clave"
+  become: yes
+  lineinfile:
+    path: /etc/sudoers
+    regexp: "^%{{ Nombre_Grupo }}"
+    line: "%{{ Nombre_Grupo }} ALL=(ALL) NOPASSWD: ALL"
+    validate: "/usr/sbin/visudo -cf %s"
