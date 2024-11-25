@@ -13,11 +13,12 @@
         name: TP_INI
     
     - include_role:
-        name: Instala-tools_Grupo-001
-    
-
-    - include_role:
         name: Alta_Usuarios_Grupo-001
 
     - include_role:
         name: Sudoers_Grupo-001
+
+    - include_role:
+        name: Instala-tools_Grupo-001
+
+

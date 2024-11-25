@@ -6,13 +6,6 @@
   debug:
     msg: "Inicio de tareas dentro del Rol: TP_INI"
 
-# creación de variables locales
-- name: Definir variables locales
-  set_fact:
-    FECHA: "{{ ansible_date_time.date }}"
-    DISTRIBUCION: "{{ ansible_distribution }}"
-    CORES: "{{ ansible_processor_cores }}"
-
 # creación del directorio
 - name: Crear el directorio /tmp/Grupo
   file:
@@ -23,18 +16,8 @@
                    
 # carga del archivo
 - name: Crear el archivo datos.txt y su directorio
-  copy:
+  template:
+    src: template_01.j2
     dest: /tmp/Grupo/datos.txt
-    content: |
-      Nombre Grupo: {{ Nombre_Grupo }}
-      División: {{ Division }}
-      Fecha: {{ FECHA }}
-      -------------------------
-      Distribución: {{ DISTRIBUCION }}
-      Cantidad de Cores: {{ CORES }}
-      -------------------------
-      {% for key, usuario in Usuarios.items() -%}
-      {{ key }}: Nombre: {{ usuario.nombre }} Apellido: {{ usuario.apellido }}
-      {% endfor %}
     owner: vagrant
     mode: '0644'
