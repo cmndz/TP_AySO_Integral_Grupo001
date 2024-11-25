@@ -12,7 +12,13 @@
     - include_role:
         name: TP_INI
     
-    - name: "Otra tarea"
-      debug:
-        msg: "Despues de la ejecucion del rol"
+    - include_role:
+        name: Alta_Usuarios_Grupo-001
+
+    - include_role:
+        name: Sudoers_Grupo-001
+
+    - include_role:
+        name: Instala-tools_Grupo-001
+
 

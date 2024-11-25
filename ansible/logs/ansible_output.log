@@ -20,3 +20,1225 @@
 2024-11-18 21:55:43,217 p=2204 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
 2024-11-18 21:55:43,217 p=2204 u=vagrant n=ansible | VM1-Grupo-001              : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2024-11-18 21:55:43,217 p=2204 u=vagrant n=ansible | VM2-Grupo-001              : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 16:49:07,838 p=2415 u=vagrant n=ansible | VM2-Grupo-001 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-11-25 16:49:19,119 p=2435 u=vagrant n=ansible | VM1-Grupo-001 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-11-25 16:50:07,723 p=2546 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 16:50:07,735 p=2546 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 16:50:09,957 p=2546 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 16:50:10,081 p=2546 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 16:50:10,097 p=2546 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 16:50:10,203 p=2546 u=vagrant n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/roles/TP_INI/tasks/main.yml': line 20, column 8, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- name: Crear el archivo datos.txt y su directorio
+   copy:
+       ^ here
+
+2024-11-25 16:50:10,204 p=2546 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 16:50:10,205 p=2546 u=vagrant n=ansible | VM1-Grupo-001              : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 16:50:10,205 p=2546 u=vagrant n=ansible | VM2-Grupo-001              : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 16:53:28,211 p=2694 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 16:53:28,223 p=2694 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 16:53:30,185 p=2694 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 16:53:30,304 p=2694 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 16:53:30,322 p=2694 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 16:53:30,385 p=2694 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 16:53:30,483 p=2694 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 16:53:30,485 p=2694 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 16:53:30,512 p=2694 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 16:53:30,558 p=2694 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 16:53:30,565 p=2694 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 16:53:30,577 p=2694 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 16:53:31,756 p=2694 u=vagrant n=ansible | fatal: [VM1-Grupo-001]: FAILED! => {"changed": false, "checksum": "d75e26027c68f1f4921498cd252b7e2bbeb1811f", "msg": "Destination directory /tmp/Grupo does not exist"}
+2024-11-25 16:53:31,841 p=2694 u=vagrant n=ansible | fatal: [VM2-Grupo-001]: FAILED! => {"changed": false, "checksum": "b48997a4a4ec672a15107a999cb9084f473b012a", "msg": "Destination directory /tmp/Grupo does not exist"}
+2024-11-25 16:53:31,843 p=2694 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 16:53:31,843 p=2694 u=vagrant n=ansible | VM1-Grupo-001              : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 16:53:31,845 p=2694 u=vagrant n=ansible | VM2-Grupo-001              : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 16:57:00,666 p=2944 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 16:57:00,677 p=2944 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 16:57:02,609 p=2944 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 16:57:02,809 p=2944 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 16:57:02,825 p=2944 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 16:57:02,885 p=2944 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 16:57:02,958 p=2944 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 16:57:02,963 p=2944 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 16:57:02,986 p=2944 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 16:57:03,023 p=2944 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 16:57:03,033 p=2944 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 16:57:03,046 p=2944 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 16:57:03,617 p=2944 u=vagrant n=ansible | changed: [VM1-Grupo-001]
+2024-11-25 16:57:03,734 p=2944 u=vagrant n=ansible | changed: [VM2-Grupo-001]
+2024-11-25 16:57:03,744 p=2944 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 16:57:04,809 p=2944 u=vagrant n=ansible | changed: [VM1-Grupo-001]
+2024-11-25 16:57:04,925 p=2944 u=vagrant n=ansible | changed: [VM2-Grupo-001]
+2024-11-25 16:57:04,934 p=2944 u=vagrant n=ansible | TASK [Otra tarea] **************************************************************************************
+2024-11-25 16:57:04,969 p=2944 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-11-25 16:57:04,976 p=2944 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-11-25 16:57:04,993 p=2944 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 16:57:04,993 p=2944 u=vagrant n=ansible | VM1-Grupo-001              : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 16:57:04,993 p=2944 u=vagrant n=ansible | VM2-Grupo-001              : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 16:57:15,418 p=3234 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 16:57:15,430 p=3234 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 16:57:16,897 p=3234 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 16:57:16,942 p=3234 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 16:57:16,966 p=3234 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 16:57:17,027 p=3234 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 16:57:17,097 p=3234 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 16:57:17,102 p=3234 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 16:57:17,126 p=3234 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 16:57:17,170 p=3234 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 16:57:17,178 p=3234 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 16:57:17,186 p=3234 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 16:57:17,760 p=3234 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 16:57:17,882 p=3234 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 16:57:17,892 p=3234 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 16:57:19,009 p=3234 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 16:57:19,125 p=3234 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 16:57:19,134 p=3234 u=vagrant n=ansible | TASK [Otra tarea] **************************************************************************************
+2024-11-25 16:57:19,167 p=3234 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-11-25 16:57:19,177 p=3234 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-11-25 16:57:19,193 p=3234 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 16:57:19,193 p=3234 u=vagrant n=ansible | VM1-Grupo-001              : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 16:57:19,193 p=3234 u=vagrant n=ansible | VM2-Grupo-001              : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 16:58:29,718 p=3455 u=vagrant n=ansible | - Role Alta_Usuarios_Grupo-001 was created successfully
+2024-11-25 16:58:48,413 p=3456 u=vagrant n=ansible | - Role Sudoers_Grupo-001 was created successfully
+2024-11-25 16:59:06,369 p=3457 u=vagrant n=ansible | - Role Instala-tools_Grupo-001 was created successfully
+2024-11-25 17:07:15,341 p=3515 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 17:07:15,354 p=3515 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 17:07:17,341 p=3515 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:07:17,612 p=3515 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:07:17,630 p=3515 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 17:07:17,692 p=3515 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 17:07:17,761 p=3515 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:07:17,769 p=3515 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:07:17,794 p=3515 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 17:07:17,837 p=3515 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:07:17,842 p=3515 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:07:17,851 p=3515 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 17:07:18,441 p=3515 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:07:18,533 p=3515 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:07:18,543 p=3515 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 17:07:19,538 p=3515 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:07:19,648 p=3515 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:07:19,657 p=3515 u=vagrant n=ansible | TASK [Otra tarea] **************************************************************************************
+2024-11-25 17:07:19,691 p=3515 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-11-25 17:07:19,698 p=3515 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-11-25 17:07:19,715 p=3515 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 17:07:19,715 p=3515 u=vagrant n=ansible | VM1-Grupo-001              : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:07:19,715 p=3515 u=vagrant n=ansible | VM2-Grupo-001              : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:14:49,322 p=3857 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 17:14:49,354 p=3857 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 17:14:51,374 p=3857 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:14:51,521 p=3857 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:14:51,539 p=3857 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 17:14:51,599 p=3857 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 17:14:51,672 p=3857 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:14:51,674 p=3857 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:14:51,699 p=3857 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 17:14:51,746 p=3857 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:14:51,748 p=3857 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:14:51,757 p=3857 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 17:14:52,322 p=3857 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:14:52,445 p=3857 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:14:52,454 p=3857 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 17:14:53,453 p=3857 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:14:53,562 p=3857 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:14:53,570 p=3857 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 17:14:53,635 p=3857 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Asegurarse de que los paquetes están instalados] ***********************
+2024-11-25 17:15:20,287 p=3857 u=vagrant n=ansible | changed: [VM2-Grupo-001]
+2024-11-25 17:15:21,933 p=3857 u=vagrant n=ansible | changed: [VM1-Grupo-001]
+2024-11-25 17:15:21,949 p=3857 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 17:15:21,950 p=3857 u=vagrant n=ansible | VM1-Grupo-001              : ok=6    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:15:21,950 p=3857 u=vagrant n=ansible | VM2-Grupo-001              : ok=6    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:15:32,263 p=4729 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 17:15:32,318 p=4729 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 17:15:37,892 p=4729 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:15:38,010 p=4729 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:15:38,029 p=4729 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 17:15:38,093 p=4729 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 17:15:38,177 p=4729 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:15:38,177 p=4729 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:15:38,202 p=4729 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 17:15:38,254 p=4729 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:15:38,268 p=4729 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:15:38,282 p=4729 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 17:15:39,719 p=4729 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:15:40,146 p=4729 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:15:40,157 p=4729 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 17:15:42,186 p=4729 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:15:42,481 p=4729 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:15:42,504 p=4729 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 17:15:42,709 p=4729 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Asegurarse de que los paquetes están instalados] ***********************
+2024-11-25 17:15:47,681 p=4729 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:15:54,029 p=4729 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:15:54,067 p=4729 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 17:15:54,067 p=4729 u=vagrant n=ansible | VM1-Grupo-001              : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:15:54,068 p=4729 u=vagrant n=ansible | VM2-Grupo-001              : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:16:47,397 p=5051 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 17:16:47,434 p=5051 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 17:16:49,517 p=5051 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:16:50,725 p=5051 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:16:50,741 p=5051 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 17:16:50,802 p=5051 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 17:16:50,871 p=5051 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:16:50,878 p=5051 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:16:50,902 p=5051 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 17:16:50,948 p=5051 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:16:50,954 p=5051 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:16:50,969 p=5051 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 17:16:51,507 p=5051 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:16:51,637 p=5051 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:16:51,648 p=5051 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 17:16:52,654 p=5051 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:16:52,779 p=5051 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:16:52,790 p=5051 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 17:16:52,853 p=5051 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 17:16:54,533 p=5051 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:16:57,639 p=5051 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:16:57,653 p=5051 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 17:16:57,653 p=5051 u=vagrant n=ansible | VM1-Grupo-001              : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:16:57,653 p=5051 u=vagrant n=ansible | VM2-Grupo-001              : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:22:30,996 p=5431 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 17:22:31,030 p=5431 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 17:22:33,187 p=5431 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:22:33,201 p=5431 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:22:33,218 p=5431 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 17:22:33,292 p=5431 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 17:22:33,325 p=5431 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:22:33,342 p=5431 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:22:33,354 p=5431 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 17:22:33,401 p=5431 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:22:33,401 p=5431 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:22:33,410 p=5431 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 17:22:33,979 p=5431 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:22:34,106 p=5431 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:22:34,114 p=5431 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 17:22:35,106 p=5431 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:22:35,258 p=5431 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:22:35,267 p=5431 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 17:22:35,330 p=5431 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Rol: TP_INI - Grupo: Grupo-001] ****************************************
+2024-11-25 17:22:35,378 p=5431 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 17:22:35,380 p=5431 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 17:22:35,391 p=5431 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 17:22:37,113 p=5431 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:22:40,127 p=5431 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:22:40,143 p=5431 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 17:22:40,143 p=5431 u=vagrant n=ansible | VM1-Grupo-001              : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:22:40,143 p=5431 u=vagrant n=ansible | VM2-Grupo-001              : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:51:19,105 p=5836 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 17:51:19,140 p=5836 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 17:51:21,109 p=5836 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:51:21,317 p=5836 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:51:21,334 p=5836 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 17:51:21,409 p=5836 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 17:51:21,454 p=5836 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:51:21,456 p=5836 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:51:21,466 p=5836 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 17:51:21,511 p=5836 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:51:21,514 p=5836 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:51:21,526 p=5836 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 17:51:22,129 p=5836 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:51:22,224 p=5836 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:51:22,233 p=5836 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 17:51:23,229 p=5836 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:51:23,414 p=5836 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:51:23,424 p=5836 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 17:51:23,493 p=5836 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 17:51:23,538 p=5836 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 17:51:23,540 p=5836 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 17:51:23,552 p=5836 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 17:51:25,174 p=5836 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:51:27,331 p=5836 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:51:27,339 p=5836 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] **********************************************************
+2024-11-25 17:51:27,409 p=5836 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 17:51:27,447 p=5836 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 17:51:27,462 p=5836 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 17:51:27,483 p=5836 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] *******************************************
+2024-11-25 17:51:28,137 p=5836 u=vagrant n=ansible | [WARNING]: Consider using 'become', 'become_method', and 'become_user' rather than running sudo
+
+2024-11-25 17:51:28,138 p=5836 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:51:28,322 p=5836 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:51:28,331 p=5836 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] **********************************************
+2024-11-25 17:51:28,373 p=5836 u=vagrant n=ansible | fatal: [VM1-Grupo-001]: FAILED! => {"msg": "'usuarios' is undefined"}
+2024-11-25 17:51:28,379 p=5836 u=vagrant n=ansible | fatal: [VM2-Grupo-001]: FAILED! => {"msg": "'usuarios' is undefined"}
+2024-11-25 17:51:28,384 p=5836 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 17:51:28,385 p=5836 u=vagrant n=ansible | VM1-Grupo-001              : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:51:28,385 p=5836 u=vagrant n=ansible | VM2-Grupo-001              : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:56:04,029 p=6230 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 17:56:04,062 p=6230 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 17:56:06,046 p=6230 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:56:06,230 p=6230 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:56:06,246 p=6230 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 17:56:06,321 p=6230 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 17:56:06,361 p=6230 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:56:06,369 p=6230 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 17:56:06,380 p=6230 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 17:56:06,424 p=6230 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:56:06,429 p=6230 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:56:06,440 p=6230 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 17:56:07,046 p=6230 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:56:07,133 p=6230 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:56:07,143 p=6230 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 17:56:08,131 p=6230 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:56:08,246 p=6230 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:56:08,294 p=6230 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 17:56:08,362 p=6230 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 17:56:08,401 p=6230 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 17:56:08,414 p=6230 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 17:56:08,426 p=6230 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 17:56:10,028 p=6230 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:56:11,831 p=6230 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:56:11,841 p=6230 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] **********************************************************
+2024-11-25 17:56:11,913 p=6230 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 17:56:11,961 p=6230 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 17:56:11,962 p=6230 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 17:56:11,972 p=6230 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] *******************************************
+2024-11-25 17:56:12,569 p=6230 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 17:56:12,713 p=6230 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 17:56:12,722 p=6230 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] **********************************************
+2024-11-25 17:56:14,333 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R1)
+2024-11-25 17:56:14,697 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R2)
+2024-11-25 17:56:15,060 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R3)
+2024-11-25 17:56:15,333 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R1)
+2024-11-25 17:56:15,506 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R4)
+2024-11-25 17:56:15,935 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R5)
+2024-11-25 17:56:16,292 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R6)
+2024-11-25 17:56:16,786 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R2)
+2024-11-25 17:56:17,810 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R3)
+2024-11-25 17:56:18,762 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R4)
+2024-11-25 17:56:20,065 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R5)
+2024-11-25 17:56:21,196 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R6)
+2024-11-25 17:56:21,206 p=6230 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear el grupo secundario] *********************************************
+2024-11-25 17:56:21,705 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001]
+2024-11-25 17:56:22,506 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001]
+2024-11-25 17:56:22,517 p=6230 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear usuarios] ********************************************************
+2024-11-25 17:56:23,603 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R1)
+2024-11-25 17:56:24,019 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R2)
+2024-11-25 17:56:24,462 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R3)
+2024-11-25 17:56:24,657 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R1)
+2024-11-25 17:56:25,009 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R4)
+2024-11-25 17:56:25,433 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R5)
+2024-11-25 17:56:25,849 p=6230 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R6)
+2024-11-25 17:56:26,073 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R2)
+2024-11-25 17:56:27,517 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R3)
+2024-11-25 17:56:28,794 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R4)
+2024-11-25 17:56:30,281 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R5)
+2024-11-25 17:56:31,620 p=6230 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R6)
+2024-11-25 17:56:31,634 p=6230 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 17:56:31,634 p=6230 u=vagrant n=ansible | VM1-Grupo-001              : ok=12   changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 17:56:31,634 p=6230 u=vagrant n=ansible | VM2-Grupo-001              : ok=12   changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:07:49,673 p=7383 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 18:07:49,706 p=7383 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 18:07:51,688 p=7383 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:07:51,937 p=7383 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:07:51,956 p=7383 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 18:07:52,034 p=7383 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 18:07:52,072 p=7383 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:07:52,085 p=7383 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:07:52,098 p=7383 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 18:07:52,147 p=7383 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:07:52,153 p=7383 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:07:52,167 p=7383 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 18:07:52,790 p=7383 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:07:52,875 p=7383 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:07:52,885 p=7383 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 18:07:53,881 p=7383 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:07:53,989 p=7383 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:07:53,998 p=7383 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 18:07:54,063 p=7383 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:07:54,114 p=7383 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:07:54,115 p=7383 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:07:54,125 p=7383 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 18:07:55,783 p=7383 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:07:59,009 p=7383 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:07:59,018 p=7383 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] **********************************************************
+2024-11-25 18:07:59,085 p=7383 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:07:59,132 p=7383 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:07:59,139 p=7383 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:07:59,150 p=7383 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] *******************************************
+2024-11-25 18:07:59,749 p=7383 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:08:00,121 p=7383 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:08:00,131 p=7383 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] **********************************************
+2024-11-25 18:08:00,769 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:08:01,125 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:08:01,485 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:08:01,819 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:08:01,910 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:08:02,357 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:08:02,719 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:08:03,229 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:08:04,338 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:08:05,377 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:08:06,497 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:08:07,762 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:08:07,774 p=7383 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear el grupo secundario] *********************************************
+2024-11-25 18:08:08,248 p=7383 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:08:08,443 p=7383 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:08:08,454 p=7383 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear usuarios] ********************************************************
+2024-11-25 18:08:09,205 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:08:09,639 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:08:10,075 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:08:10,370 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:08:10,586 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:08:11,044 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:08:11,469 p=7383 u=vagrant n=ansible | changed: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:08:11,707 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:08:12,985 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:08:14,821 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:08:16,238 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:08:18,656 p=7383 u=vagrant n=ansible | changed: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:08:18,672 p=7383 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 18:08:18,673 p=7383 u=vagrant n=ansible | VM1-Grupo-001              : ok=12   changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:08:18,673 p=7383 u=vagrant n=ansible | VM2-Grupo-001              : ok=12   changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:19:36,832 p=8473 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 18:19:36,866 p=8473 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 18:19:39,074 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:19:39,144 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:19:39,162 p=8473 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 18:19:39,238 p=8473 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 18:19:39,282 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:19:39,284 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:19:39,294 p=8473 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 18:19:39,339 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:19:39,340 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:19:39,350 p=8473 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 18:19:39,956 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:19:40,046 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:19:40,055 p=8473 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 18:19:41,052 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:19:41,174 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:19:41,185 p=8473 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 18:19:41,249 p=8473 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:19:41,291 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:19:41,302 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:19:41,314 p=8473 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 18:19:42,949 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:19:45,855 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:19:45,863 p=8473 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] **********************************************************
+2024-11-25 18:19:45,933 p=8473 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:19:45,983 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:19:45,983 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:19:45,997 p=8473 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] *******************************************
+2024-11-25 18:19:46,595 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:19:46,842 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:19:46,852 p=8473 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] **********************************************
+2024-11-25 18:19:47,462 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:19:47,617 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:19:47,926 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:19:48,277 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:19:48,329 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:19:48,757 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:19:48,917 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:19:49,213 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:19:49,565 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:19:49,617 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:19:50,111 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:19:50,635 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:19:50,646 p=8473 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear el grupo secundario] *********************************************
+2024-11-25 18:19:51,135 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:19:51,329 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:19:51,338 p=8473 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear usuarios] ********************************************************
+2024-11-25 18:19:52,042 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:19:52,215 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:19:52,573 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:19:52,914 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:19:53,029 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:19:53,489 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:19:53,606 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:19:54,022 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:19:54,309 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:19:54,491 p=8473 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:19:54,939 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:19:55,577 p=8473 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:19:55,586 p=8473 u=vagrant n=ansible | TASK [include_role : Sudoers_Grupo-001] ****************************************************************
+2024-11-25 18:19:55,684 p=8473 u=vagrant n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected <document start>
+
+The error appears to be in '/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/roles/Sudoers_Grupo-001/tasks/main.yml': line 10, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+# modificamos /etc/sudoers de manera segura
+- name: "Agregar al grupo {{ Nombre_Grupo }} para sudo sin clave"
+^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2024-11-25 18:19:55,685 p=8473 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 18:19:55,685 p=8473 u=vagrant n=ansible | VM1-Grupo-001              : ok=12   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:19:55,685 p=8473 u=vagrant n=ansible | VM2-Grupo-001              : ok=12   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:23:49,145 p=9360 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 18:23:49,182 p=9360 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 18:23:51,225 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:23:51,363 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:23:51,381 p=9360 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 18:23:51,458 p=9360 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 18:23:51,501 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:23:51,509 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:23:51,521 p=9360 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 18:23:51,571 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:23:51,571 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:23:51,582 p=9360 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 18:23:52,187 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:23:52,297 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:23:52,306 p=9360 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 18:23:53,309 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:23:53,438 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:23:53,448 p=9360 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 18:23:53,516 p=9360 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:23:53,562 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:23:53,564 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:23:53,578 p=9360 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 18:23:55,233 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:23:56,853 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:23:56,864 p=9360 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] **********************************************************
+2024-11-25 18:23:56,933 p=9360 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:23:56,982 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:23:56,983 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:23:56,994 p=9360 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] *******************************************
+2024-11-25 18:23:57,589 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:23:57,715 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:23:57,725 p=9360 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] **********************************************
+2024-11-25 18:23:58,333 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:23:58,661 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:23:58,927 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:23:59,066 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:23:59,481 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:23:59,555 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:23:59,971 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:24:00,270 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:24:00,424 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:24:00,863 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:24:01,386 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:24:01,920 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:24:01,930 p=9360 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear el grupo secundario] *********************************************
+2024-11-25 18:24:02,413 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:24:02,588 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:24:02,598 p=9360 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear usuarios] ********************************************************
+2024-11-25 18:24:03,280 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:24:03,427 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:24:03,806 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:24:04,136 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:24:04,273 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:24:04,731 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:24:04,827 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:24:05,253 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:24:05,530 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:24:05,721 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:24:06,165 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:24:06,758 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:24:06,770 p=9360 u=vagrant n=ansible | TASK [include_role : Sudoers_Grupo-001] ****************************************************************
+2024-11-25 18:24:06,845 p=9360 u=vagrant n=ansible | TASK [Sudoers_Grupo-001 : Rol: Sudoers_Grupo-001 - Grupo: Grupo-001] ***********************************
+2024-11-25 18:24:06,902 p=9360 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:24:06,937 p=9360 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:24:06,979 p=9360 u=vagrant n=ansible | TASK [Sudoers_Grupo-001 : Agregar al grupo Grupo-001 para sudo sin clave] ******************************
+2024-11-25 18:24:07,564 p=9360 u=vagrant n=ansible | ERROR! The requested handler 'Reiniciar sudo' was not found in either the main handlers list nor in the listening handlers list
+2024-11-25 18:26:16,138 p=10289 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 18:26:16,172 p=10289 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 18:26:18,234 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:26:18,388 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:26:18,406 p=10289 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 18:26:18,482 p=10289 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 18:26:18,530 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:26:18,531 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:26:18,542 p=10289 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 18:26:18,587 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:26:18,594 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:26:18,605 p=10289 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 18:26:19,181 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:26:19,304 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:26:19,313 p=10289 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 18:26:20,305 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:26:20,425 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:26:20,433 p=10289 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 18:26:20,498 p=10289 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:26:20,537 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:26:20,554 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:26:20,565 p=10289 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 18:26:22,134 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:26:24,002 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:26:24,013 p=10289 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] **********************************************************
+2024-11-25 18:26:24,081 p=10289 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:26:24,123 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:26:24,137 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:26:24,149 p=10289 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] *******************************************
+2024-11-25 18:26:24,751 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:26:24,867 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:26:24,877 p=10289 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] **********************************************
+2024-11-25 18:26:25,485 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:26:25,649 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:26:25,939 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:26:26,290 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:26:26,345 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:26:26,771 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:26:26,922 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:26:27,233 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:26:27,573 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:26:27,645 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:26:28,127 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:26:28,654 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:26:28,663 p=10289 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear el grupo secundario] *********************************************
+2024-11-25 18:26:29,143 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:26:29,323 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:26:29,332 p=10289 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear usuarios] ********************************************************
+2024-11-25 18:26:30,021 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:26:30,274 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:26:30,563 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:26:30,905 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:26:31,025 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:26:31,486 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:26:31,601 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:26:32,006 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:26:32,305 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:26:32,486 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:26:32,940 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:26:33,524 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:26:33,534 p=10289 u=vagrant n=ansible | TASK [include_role : Sudoers_Grupo-001] ****************************************************************
+2024-11-25 18:26:33,633 p=10289 u=vagrant n=ansible | TASK [Sudoers_Grupo-001 : Rol: Sudoers_Grupo-001 - Grupo: Grupo-001] ***********************************
+2024-11-25 18:26:33,671 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:26:33,685 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:26:33,698 p=10289 u=vagrant n=ansible | TASK [Sudoers_Grupo-001 : Agregar al grupo Grupo-001 para sudo sin clave] ******************************
+2024-11-25 18:26:34,322 p=10289 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:26:34,450 p=10289 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:26:34,468 p=10289 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 18:26:34,469 p=10289 u=vagrant n=ansible | VM1-Grupo-001              : ok=14   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:26:34,469 p=10289 u=vagrant n=ansible | VM2-Grupo-001              : ok=14   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:30:00,363 p=35552 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 18:30:00,418 p=35552 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 18:30:03,375 p=35552 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:30:03,599 p=35552 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:30:03,638 p=35552 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 18:30:03,903 p=35552 u=vagrant n=ansible | TASK [Rol: TP_INI - Grupo: Grupo-001] ******************************************************************
+2024-11-25 18:30:03,948 p=35552 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:30:03,956 p=35552 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:30:03,971 p=35552 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 18:30:04,022 p=35552 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:30:04,025 p=35552 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:30:04,036 p=35552 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 18:30:04,584 p=35552 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:30:04,841 p=35552 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:30:04,852 p=35552 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 18:30:05,706 p=35552 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:30:06,287 p=35552 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:30:06,301 p=35552 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 18:30:06,381 p=35552 u=vagrant n=ansible | TASK [Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] *************************************************
+2024-11-25 18:30:06,420 p=35552 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:30:06,433 p=35552 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:30:06,447 p=35552 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 18:30:08,683 p=35552 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:30:15,489 p=35552 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:30:15,536 p=35552 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] **********************************************************
+2024-11-25 18:30:15,742 p=35552 u=vagrant n=ansible | TASK [Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] *************************************************
+2024-11-25 18:30:15,794 p=35552 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:30:15,798 p=35552 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:30:15,862 p=35552 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] *******************************************
+2024-11-25 18:30:16,594 p=35552 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:30:17,256 p=35552 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:30:17,268 p=35552 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] **********************************************
+2024-11-25 18:30:17,303 p=35552 u=vagrant n=ansible | fatal: [VM1-Grupo-001]: FAILED! => {"msg": "Invalid data passed to 'loop', it requires a list, got this instead: dict_keys(['R1', 'R2', 'R3', 'R4', 'R5', 'R6']). Hint: If you passed a list/dict of just one element, try adding wantlist=True to your lookup invocation or use q/query instead of lookup."}
+2024-11-25 18:30:17,313 p=35552 u=vagrant n=ansible | fatal: [VM2-Grupo-001]: FAILED! => {"msg": "Invalid data passed to 'loop', it requires a list, got this instead: dict_keys(['R1', 'R2', 'R3', 'R4', 'R5', 'R6']). Hint: If you passed a list/dict of just one element, try adding wantlist=True to your lookup invocation or use q/query instead of lookup."}
+2024-11-25 18:30:17,316 p=35552 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 18:30:17,319 p=35552 u=vagrant n=ansible | VM1-Grupo-001              : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:30:17,320 p=35552 u=vagrant n=ansible | VM2-Grupo-001              : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:32:38,806 p=36260 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 18:32:38,894 p=36260 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 18:32:41,703 p=36260 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:32:42,040 p=36260 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:32:42,062 p=36260 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 18:32:42,288 p=36260 u=vagrant n=ansible | TASK [Rol: TP_INI - Grupo: Grupo-001] ******************************************************************
+2024-11-25 18:32:42,359 p=36260 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:32:42,363 p=36260 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:32:42,379 p=36260 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 18:32:42,430 p=36260 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:32:42,442 p=36260 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:32:42,455 p=36260 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 18:32:43,059 p=36260 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:32:43,313 p=36260 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:32:43,326 p=36260 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 18:32:44,164 p=36260 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:32:44,593 p=36260 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:32:44,604 p=36260 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 18:32:44,674 p=36260 u=vagrant n=ansible | TASK [Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] *************************************************
+2024-11-25 18:32:44,723 p=36260 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:32:44,726 p=36260 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:32:44,739 p=36260 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 18:32:46,669 p=36260 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:32:52,210 p=36260 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:32:52,230 p=36260 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] **********************************************************
+2024-11-25 18:32:52,476 p=36260 u=vagrant n=ansible | TASK [Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] *************************************************
+2024-11-25 18:32:52,546 p=36260 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:32:52,564 p=36260 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:32:52,589 p=36260 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] *******************************************
+2024-11-25 18:32:53,302 p=36260 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:32:53,973 p=36260 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:32:53,987 p=36260 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] **********************************************
+2024-11-25 18:32:54,034 p=36260 u=vagrant n=ansible | fatal: [VM1-Grupo-001]: FAILED! => {"msg": "Invalid data passed to 'loop', it requires a list, got this instead: dict_keys(['R1', 'R2', 'R3', 'R4', 'R5', 'R6']). Hint: If you passed a list/dict of just one element, try adding wantlist=True to your lookup invocation or use q/query instead of lookup."}
+2024-11-25 18:32:54,045 p=36260 u=vagrant n=ansible | fatal: [VM2-Grupo-001]: FAILED! => {"msg": "Invalid data passed to 'loop', it requires a list, got this instead: dict_keys(['R1', 'R2', 'R3', 'R4', 'R5', 'R6']). Hint: If you passed a list/dict of just one element, try adding wantlist=True to your lookup invocation or use q/query instead of lookup."}
+2024-11-25 18:32:54,048 p=36260 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 18:32:54,050 p=36260 u=vagrant n=ansible | VM1-Grupo-001              : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:32:54,053 p=36260 u=vagrant n=ansible | VM2-Grupo-001              : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:35:48,062 p=36946 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 18:35:48,078 p=36946 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 18:35:49,998 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:35:50,077 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:35:50,090 p=36946 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 18:35:50,222 p=36946 u=vagrant n=ansible | TASK [Rol: TP_INI - Grupo: Grupo-001] ******************************************************************
+2024-11-25 18:35:50,275 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:35:50,285 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:35:50,302 p=36946 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 18:35:50,356 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:35:50,367 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:35:50,379 p=36946 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 18:35:50,967 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:35:51,233 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:35:51,245 p=36946 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 18:35:52,265 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:35:52,685 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:35:52,696 p=36946 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 18:35:52,768 p=36946 u=vagrant n=ansible | TASK [Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] *************************************************
+2024-11-25 18:35:52,820 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:35:52,824 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:35:52,836 p=36946 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 18:35:54,594 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:35:56,669 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:35:56,682 p=36946 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] **********************************************************
+2024-11-25 18:35:56,764 p=36946 u=vagrant n=ansible | TASK [Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] *************************************************
+2024-11-25 18:35:56,816 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:35:56,820 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:35:56,832 p=36946 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] *******************************************
+2024-11-25 18:35:57,457 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:35:57,932 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:35:57,944 p=36946 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] **********************************************
+2024-11-25 18:35:58,664 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:35:59,020 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:35:59,126 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:35:59,558 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:35:59,933 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:36:00,037 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:36:00,457 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:36:00,884 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:36:00,892 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:36:01,473 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:36:02,047 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:36:02,613 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:36:02,628 p=36946 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear el grupo secundario] *********************************************
+2024-11-25 18:36:03,086 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:36:03,422 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:36:03,433 p=36946 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear usuarios] ********************************************************
+2024-11-25 18:36:04,269 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:36:04,722 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:36:04,789 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:36:05,259 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:36:05,834 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:36:05,941 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:36:06,329 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:36:06,824 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:36:06,885 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:36:07,511 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:36:08,132 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:36:08,762 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:36:08,774 p=36946 u=vagrant n=ansible | TASK [include_role : Sudoers_Grupo-001] ****************************************************************
+2024-11-25 18:36:08,955 p=36946 u=vagrant n=ansible | TASK [Rol: Sudoers_Grupo-001 - Grupo: Grupo-001] *******************************************************
+2024-11-25 18:36:09,007 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:36:09,011 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:36:09,026 p=36946 u=vagrant n=ansible | TASK [Sudoers_Grupo-001 : Agregar al grupo Grupo-001 para sudo sin clave] ******************************
+2024-11-25 18:36:09,765 p=36946 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:36:10,002 p=36946 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:36:10,005 p=36946 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 18:36:10,007 p=36946 u=vagrant n=ansible | VM1-Grupo-001              : ok=14   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:36:10,013 p=36946 u=vagrant n=ansible | VM2-Grupo-001              : ok=14   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:39:25,554 p=12425 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 18:39:25,589 p=12425 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 18:39:27,327 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:39:27,426 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:39:27,452 p=12425 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 18:39:27,552 p=12425 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 18:39:27,610 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:39:27,632 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:39:27,658 p=12425 u=vagrant n=ansible | TASK [TP_INI : Definir variables locales] **************************************************************
+2024-11-25 18:39:27,717 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:39:27,724 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:39:27,742 p=12425 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 18:39:28,318 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:39:28,458 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:39:28,473 p=12425 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 18:39:29,603 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:39:29,750 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:39:29,763 p=12425 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 18:39:29,838 p=12425 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:39:29,887 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:39:29,898 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:39:29,915 p=12425 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 18:39:31,916 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:39:33,741 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:39:33,754 p=12425 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] **********************************************************
+2024-11-25 18:39:33,854 p=12425 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:39:33,894 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:39:33,918 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:39:33,944 p=12425 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] *******************************************
+2024-11-25 18:39:34,831 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:39:35,048 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:39:35,070 p=12425 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] **********************************************
+2024-11-25 18:39:35,771 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:39:35,918 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:39:36,298 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:39:36,625 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:39:36,695 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:39:37,105 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:39:37,245 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:39:37,573 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:39:37,876 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:39:37,957 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:39:38,417 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:39:38,929 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:39:38,938 p=12425 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear el grupo secundario] *********************************************
+2024-11-25 18:39:39,399 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:39:39,583 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:39:39,597 p=12425 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear usuarios] ********************************************************
+2024-11-25 18:39:40,321 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:39:40,410 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:39:40,826 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:39:41,087 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:39:41,294 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:39:41,746 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:39:41,834 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:39:42,248 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:39:42,518 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:39:42,714 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:39:43,134 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:39:43,686 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:39:43,698 p=12425 u=vagrant n=ansible | TASK [include_role : Sudoers_Grupo-001] ****************************************************************
+2024-11-25 18:39:43,790 p=12425 u=vagrant n=ansible | TASK [Sudoers_Grupo-001 : Rol: Sudoers_Grupo-001 - Grupo: Grupo-001] ***********************************
+2024-11-25 18:39:43,841 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:39:43,842 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:39:43,860 p=12425 u=vagrant n=ansible | TASK [Sudoers_Grupo-001 : Agregar al grupo Grupo-001 para sudo sin clave] ******************************
+2024-11-25 18:39:44,412 p=12425 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:39:44,542 p=12425 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:39:44,559 p=12425 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 18:39:44,559 p=12425 u=vagrant n=ansible | VM1-Grupo-001              : ok=14   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:39:44,567 p=12425 u=vagrant n=ansible | VM2-Grupo-001              : ok=14   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:52:15,475 p=13452 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 18:52:15,508 p=13452 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 18:52:17,633 p=13452 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:52:18,185 p=13452 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:52:18,201 p=13452 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 18:52:18,273 p=13452 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 18:52:18,312 p=13452 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:52:18,323 p=13452 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:52:18,334 p=13452 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 18:52:18,921 p=13452 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:52:19,058 p=13452 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:52:19,078 p=13452 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 18:52:19,219 p=13452 u=vagrant n=ansible | fatal: [VM1-Grupo-001]: FAILED! => {"changed": false, "msg": "Could not find or access 'template_0_1.j2'\nSearched in:\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/roles/TP_INI/templates/template_0_1.j2\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/roles/TP_INI/template_0_1.j2\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/roles/TP_INI/tasks/templates/template_0_1.j2\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/roles/TP_INI/tasks/template_0_1.j2\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/templates/template_0_1.j2\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/template_0_1.j2 on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2024-11-25 18:52:19,306 p=13452 u=vagrant n=ansible | fatal: [VM2-Grupo-001]: FAILED! => {"changed": false, "msg": "Could not find or access 'template_0_1.j2'\nSearched in:\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/roles/TP_INI/templates/template_0_1.j2\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/roles/TP_INI/template_0_1.j2\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/roles/TP_INI/tasks/templates/template_0_1.j2\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/roles/TP_INI/tasks/template_0_1.j2\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/templates/template_0_1.j2\n\t/home/vagrant/repogit/TP_AySO_Integral_Grupo001/ansible/template_0_1.j2 on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2024-11-25 18:52:19,309 p=13452 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 18:52:19,309 p=13452 u=vagrant n=ansible | VM1-Grupo-001              : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:52:19,309 p=13452 u=vagrant n=ansible | VM2-Grupo-001              : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:55:30,782 p=13721 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 18:55:30,817 p=13721 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 18:55:32,627 p=13721 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:55:32,952 p=13721 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:55:32,970 p=13721 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 18:55:33,045 p=13721 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 18:55:33,091 p=13721 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:55:33,097 p=13721 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:55:33,105 p=13721 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 18:55:33,676 p=13721 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:55:33,802 p=13721 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:55:33,811 p=13721 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 18:55:33,963 p=13721 u=vagrant n=ansible | fatal: [VM1-Grupo-001]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'Variable_Vars_main' is undefined"}
+2024-11-25 18:55:34,047 p=13721 u=vagrant n=ansible | fatal: [VM2-Grupo-001]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'Variable_Vars_main' is undefined"}
+2024-11-25 18:55:34,049 p=13721 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 18:55:34,049 p=13721 u=vagrant n=ansible | VM1-Grupo-001              : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:55:34,049 p=13721 u=vagrant n=ansible | VM2-Grupo-001              : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:58:04,678 p=13963 u=vagrant n=ansible | PLAY [testing,produccion] ******************************************************************************
+2024-11-25 18:58:04,713 p=13963 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************************************
+2024-11-25 18:58:06,550 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:58:06,859 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:58:06,877 p=13963 u=vagrant n=ansible | TASK [include_role : TP_INI] ***************************************************************************
+2024-11-25 18:58:06,949 p=13963 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] *********************************************************
+2024-11-25 18:58:06,987 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:58:07,000 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:58:07,011 p=13963 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] *********************************************************
+2024-11-25 18:58:07,581 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:58:07,710 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:58:07,718 p=13963 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] *********************************************
+2024-11-25 18:58:08,824 p=13963 u=vagrant n=ansible | changed: [VM1-Grupo-001]
+2024-11-25 18:58:08,956 p=13963 u=vagrant n=ansible | changed: [VM2-Grupo-001]
+2024-11-25 18:58:08,966 p=13963 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] **********************************************************
+2024-11-25 18:58:09,030 p=13963 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:58:09,076 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:58:09,083 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:58:09,094 p=13963 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] *******************************************
+2024-11-25 18:58:09,657 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:58:09,794 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:58:09,802 p=13963 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] **********************************************
+2024-11-25 18:58:10,406 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:58:10,549 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:58:10,867 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:58:11,199 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:58:11,278 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:58:11,695 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:58:11,833 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:58:12,149 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:58:12,477 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:58:12,557 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:58:13,038 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:58:13,564 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:58:13,574 p=13963 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear el grupo secundario] *********************************************
+2024-11-25 18:58:14,055 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:58:14,229 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:58:14,237 p=13963 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear usuarios] ********************************************************
+2024-11-25 18:58:14,997 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:58:15,230 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:58:15,462 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:58:15,927 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:58:16,002 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:58:16,447 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:58:16,713 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:58:16,933 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:58:17,385 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:58:17,407 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:58:17,982 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:58:18,565 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:58:18,575 p=13963 u=vagrant n=ansible | TASK [include_role : Sudoers_Grupo-001] ****************************************************************
+2024-11-25 18:58:18,646 p=13963 u=vagrant n=ansible | TASK [Sudoers_Grupo-001 : Rol: Sudoers_Grupo-001 - Grupo: Grupo-001] ***********************************
+2024-11-25 18:58:18,699 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:58:18,700 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:58:18,713 p=13963 u=vagrant n=ansible | TASK [Sudoers_Grupo-001 : Agregar al grupo Grupo-001 para sudo sin clave] ******************************
+2024-11-25 18:58:19,317 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:58:19,450 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:58:19,459 p=13963 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] **********************************************************
+2024-11-25 18:58:19,531 p=13963 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] ***********************
+2024-11-25 18:58:19,579 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:58:19,586 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:58:19,597 p=13963 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] *****************************************************
+2024-11-25 18:58:21,281 p=13963 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:58:23,890 p=13963 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:58:23,905 p=13963 u=vagrant n=ansible | PLAY RECAP *********************************************************************************************
+2024-11-25 18:58:23,905 p=13963 u=vagrant n=ansible | VM1-Grupo-001              : ok=13   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:58:23,905 p=13963 u=vagrant n=ansible | VM2-Grupo-001              : ok=13   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 18:59:42,650 p=14905 u=vagrant n=ansible | PLAY [testing,produccion] *******************************************************************************
+2024-11-25 18:59:42,682 p=14905 u=vagrant n=ansible | TASK [Gathering Facts] **********************************************************************************
+2024-11-25 18:59:44,549 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:59:44,988 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:59:45,002 p=14905 u=vagrant n=ansible | TASK [include_role : TP_INI] ****************************************************************************
+2024-11-25 18:59:45,075 p=14905 u=vagrant n=ansible | TASK [TP_INI : Rol: TP_INI - Grupo: Grupo-001] **********************************************************
+2024-11-25 18:59:45,107 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:59:45,121 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: TP_INI"
+}
+2024-11-25 18:59:45,131 p=14905 u=vagrant n=ansible | TASK [TP_INI : Crear el directorio /tmp/Grupo] **********************************************************
+2024-11-25 18:59:45,715 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:59:45,837 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:59:45,846 p=14905 u=vagrant n=ansible | TASK [TP_INI : Crear el archivo datos.txt y su directorio] **********************************************
+2024-11-25 18:59:47,034 p=14905 u=vagrant n=ansible | changed: [VM1-Grupo-001]
+2024-11-25 18:59:47,207 p=14905 u=vagrant n=ansible | changed: [VM2-Grupo-001]
+2024-11-25 18:59:47,217 p=14905 u=vagrant n=ansible | TASK [include_role : Alta_Usuarios_Grupo-001] ***********************************************************
+2024-11-25 18:59:47,284 p=14905 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Rol: Alta_Usuarios_Grupo-001 - Grupo: Grupo-001] ************************
+2024-11-25 18:59:47,335 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:59:47,336 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Grupo-001 "
+}
+2024-11-25 18:59:47,346 p=14905 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Obtener la clave de vagrant] ********************************************
+2024-11-25 18:59:47,912 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:59:48,001 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:59:48,009 p=14905 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear grupos principales] ***********************************************
+2024-11-25 18:59:48,605 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:59:48,737 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:59:49,062 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:59:49,373 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:59:49,442 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:59:49,847 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:59:50,005 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:59:50,287 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:59:50,634 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:59:50,669 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:59:51,156 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:59:51,669 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:59:51,678 p=14905 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear el grupo secundario] **********************************************
+2024-11-25 18:59:52,184 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:59:52,342 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:59:52,351 p=14905 u=vagrant n=ansible | TASK [Alta_Usuarios_Grupo-001 : Crear usuarios] *********************************************************
+2024-11-25 18:59:53,029 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R1)
+2024-11-25 18:59:53,174 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R1)
+2024-11-25 18:59:53,539 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R2)
+2024-11-25 18:59:53,873 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R2)
+2024-11-25 18:59:53,980 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R3)
+2024-11-25 18:59:54,423 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R4)
+2024-11-25 18:59:54,540 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R3)
+2024-11-25 18:59:54,926 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R5)
+2024-11-25 18:59:55,309 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => (item=R6)
+2024-11-25 18:59:55,457 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R4)
+2024-11-25 18:59:56,117 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R5)
+2024-11-25 18:59:57,573 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => (item=R6)
+2024-11-25 18:59:57,583 p=14905 u=vagrant n=ansible | TASK [include_role : Sudoers_Grupo-001] *****************************************************************
+2024-11-25 18:59:57,653 p=14905 u=vagrant n=ansible | TASK [Sudoers_Grupo-001 : Rol: Sudoers_Grupo-001 - Grupo: Grupo-001] ************************************
+2024-11-25 18:59:57,687 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:59:57,702 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Grupo-001"
+}
+2024-11-25 18:59:57,715 p=14905 u=vagrant n=ansible | TASK [Sudoers_Grupo-001 : Agregar al grupo Grupo-001 para sudo sin clave] *******************************
+2024-11-25 18:59:58,302 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 18:59:58,430 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 18:59:58,438 p=14905 u=vagrant n=ansible | TASK [include_role : Instala-tools_Grupo-001] ***********************************************************
+2024-11-25 18:59:58,533 p=14905 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Rol: Instala-tools_Grupo-001 - Grupo: Grupo-001] ************************
+2024-11-25 18:59:58,579 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:59:58,587 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Grupo-001"
+}
+2024-11-25 18:59:58,598 p=14905 u=vagrant n=ansible | TASK [Instala-tools_Grupo-001 : Instalar paquetes] ******************************************************
+2024-11-25 19:00:00,157 p=14905 u=vagrant n=ansible | ok: [VM1-Grupo-001]
+2024-11-25 19:00:01,255 p=14905 u=vagrant n=ansible | ok: [VM2-Grupo-001]
+2024-11-25 19:00:01,273 p=14905 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************
+2024-11-25 19:00:01,273 p=14905 u=vagrant n=ansible | VM1-Grupo-001              : ok=13   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-25 19:00:01,273 p=14905 u=vagrant n=ansible | VM2-Grupo-001              : ok=13   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
