@@ -1,8 +1,10 @@
 version: '3'
 services:
   web:
-    images: lider_usuario_dockerhub/tp-div_313_grupo_grupo001
-     volumes:
+    build: .
+    image: $mustuan/tp-div_313_grupo_grupo001
+    volumes:
       - ./web/file:/usr/share/nginx/html/file
     ports:
       - "8080:80"
+
