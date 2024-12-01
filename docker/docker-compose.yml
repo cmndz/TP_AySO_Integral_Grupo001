@@ -1,0 +1,7 @@
+services:
+  web:
+    image: cmndz/tp-div_313_grupo_grupo001
+    volumes:
+      - ./web/file/:/usr/share/nginx/html/file/
+    ports:
+      - "8081:80"

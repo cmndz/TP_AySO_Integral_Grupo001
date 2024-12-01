@@ -1,0 +1,15 @@
+---
+# mensaje inicial
+- name: "Rol: Instala-tools_{{ Nombre_Grupo }} - Grupo: {{ Nombre_Grupo }}"
+  debug:
+    msg: "Inicio de tareas dentro del Rol: Instala-tools_{{ Nombre_Grupo }}"
+
+# instalar los paquetes
+- name: Instalar paquetes
+  become: yes
+  package:
+    name:
+      - htop
+      - tmux
+      - speedtest-cli
+    state: present 

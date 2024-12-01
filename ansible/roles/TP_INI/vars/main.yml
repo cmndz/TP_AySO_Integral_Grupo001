@@ -1,0 +1,14 @@
+---
+# vars file for TP_INI
+
+Nombre_Grupo: "Grupo-001"
+
+Division: "División_313"
+
+Usuarios:
+  R1: { nombre: "Carlos", apellido: "Mendez" }
+  R2: { nombre: "Pablo", apellido: "Ali" }
+  R3: { nombre: "Juan Gabriel", apellido: "Sancineto" }
+  R4: { nombre: "Sergio Maximiliano", apellido: "Martínez" }
+  R5: { nombre: "Juan Ignacio", apellido: "Sanchez" }
+  R6: { nombre: "Lourdes", apellido: "Privitera" }

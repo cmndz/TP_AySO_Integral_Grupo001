@@ -1,0 +1,13 @@
+
+# Usar la imagen base de Nginx
+FROM nginx:latest
+
+# Reemplazar <XXX> y <Nombre-grupo> por los valores correspondientes
+LABEL version="TP-Div_313_Grupo_Grupo001"
+
+# Copiar la carpeta web al directorio que Nginx usa para servir archivos
+COPY web /usr/share/nginx/html
+
+# Exponer el puerto 80 para acceder a la aplicación
+EXPOSE 80
+
