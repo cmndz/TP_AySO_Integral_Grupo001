@@ -2,10 +2,10 @@ version: '3'
 services:
   web:
     build: .
-    #image: cmndz/tp-div_313_grupo_grupo001
-    image: pablosharifali/tp-div_313_grupo001
+    image: cmndz/tp-div_313_grupo_grupo001
+      #image: pablosharifali/tp-div_313_grupo_grupo001 
     volumes:
-      - ./web/file:/usr/share/nginx/html/file
+      - ./web/file/:/usr/share/nginx/html/file
     ports:
       - "8081:80"
 

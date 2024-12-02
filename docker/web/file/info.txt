@@ -1,8 +1,8 @@
 #####################################
 #
 # Se reemplazara con datos pedidos.
-#
-#	pruba de funcionamiento
+# 
+# prueba  	
 #
 #####################################
 
