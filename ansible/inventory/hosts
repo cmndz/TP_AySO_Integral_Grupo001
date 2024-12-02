@@ -1,0 +1,9 @@
+[all:children]
+testing
+produccion
+
+[testing]
+VM1-Grupo-001 
+
+[produccion]
+VM2-Grupo-001

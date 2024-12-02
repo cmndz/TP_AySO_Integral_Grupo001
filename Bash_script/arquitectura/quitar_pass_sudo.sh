@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Lista de usuarios
-USUARIOS=("TP_202411_Prog1" "TP_202411_Prog2" "TP_202411_Test1" "TP_202411_Supervisor")
+USUARIOS=("TP_202411_Prog1" "TP_202411_Prog2" "TP_202411_Test1" "TP_202411_Supervisor" "R1_carlos" "R2_pablo" "R3_juangabriel" "R4_sergiomaximiliano" "R5_juanignacio" "R6_lourdes")
 
 # Configurar sudo sin contraseña para cada usuario
 
